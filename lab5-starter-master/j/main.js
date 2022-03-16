@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     var myCues = [
         { seconds: 2, callback: func1 },
         { seconds: 9, callback: func2 },
-        { seconds: 15, callback: func3 }
+        { seconds: 18, callback: func3 },
+        { seconds: 24, callback: func4 }
     ];
 
     //this activates the cuepoints module.
@@ -37,8 +38,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 });
 
-
-
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks
 //feel free to rename the functions to be more descriptive of what they do.
@@ -46,7 +45,8 @@ function func1() {
     document.querySelector("#web").src = "images/flag.jpg";
     function fadeIn() {
        
-}}
+    }
+}
 
 function func2() {
     document.querySelector("#web").src = "images/bharatanatyam.jpg"; 
@@ -59,10 +59,27 @@ function func2() {
 }
 
 function func3() {
+    const vid = document.querySelector("#vid");
+
+    vid.pause();
+
+    setTimeout(() => {
+        vid.play();
+        document.querySelector("#web").src = "";
+    }, 36000);
+
+
+    document.querySelector("#web").src =
+        "assets/About Bharatanatyam.mp4";
+        // document.querySelector("body").style = "background-image: linear-gradient(orange, white, green);";
+
+}
+
+function func4() {
     document.querySelector("#web").src =
     "https://en.wikipedia.org/wiki/Bharatanatyam";
     document.querySelector("body").style = "background-image: linear-gradient(orange, white, green);";
-}
 
+    }
 
 
