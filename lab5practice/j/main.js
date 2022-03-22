@@ -13,13 +13,16 @@
 
 import { cueTimer } from "./modules/cuepoints.js";
 
+const vid = document.querySelector("#vid");
+
 document.addEventListener("DOMContentLoaded", (e) => {
 
     var myCues = [
         { seconds: 5, callback: func1 },
         { seconds: 11, callback: func2 },
         { seconds: 21, callback: func3 },
-        { seconds: 27, callback: func4 }
+        { seconds: 27, callback: func4 },
+        { seconds: 34, callback: func5 }
     ];
 
     //this activates the cuepoints module.
@@ -28,40 +31,55 @@ document.addEventListener("DOMContentLoaded", (e) => {
     cueTimer.setup("vid", myCues);
 
     //shortcut variables
-    const vid = document.querySelector("#vid");
+    
     const selectList = document.querySelector("#video_select");
     
     // make the select list control what video format to play
-    selectList.addEventListener("change", (e) => {
-        selectVideo(e, vid);
-    });
+    // selectList.addEventListener("change", (e) => {
+    //     selectVideo(e, vid);
+    // });
 
 });
-// var vid = document.getElementById("#vid"); 
-function playVid() { 
-    vid.play(); 
-  } 
-  
-  function pauseVid() { 
-    vid.pause(); 
-  } 
+////video control buttons
+const myplay = document.getElementById('myplay');
+const mypause = document.getElementById('mypause');
+const slo = document.getElementById('slo');
+const normalSpeed = document.getElementById('normalSpeed');
+
+//add event listners for controls
+myplay.addEventListener('click', (e) => {
+    vid.play();
+});
+
+mypause.addEventListener('click', (e) => {
+    vid.pause();
+});
+
+slo.addEventListener('click', (e) => {
+    vid.playbackRate = 0.25;
+});
+
+normalSpeed.addEventListener('click', (e) => {
+    vid.playbackRate = 1;
+});
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks
 //feel free to rename the functions to be more descriptive of what they do.
 function func1() {
     document.querySelector("#web").src = "images/flag.jpg";
     
-   
-    document.body.style.backgroundRepeat = "no-repeat";
-    // document.body.style.filter= "blur(5px)";
 }
 
 function func2() {
-    document.querySelector("#web").src = "images/info6.jpg"; 
     document.body.style.backgroundImage = "url('images/background2.jpg')";
     document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundPosition="center"; 
+    // document.body.style.backgroundPosition="center"; 
     document.body.style.color = "black";
+
+    setTimeout(() => {
+        document.querySelector("#web").src = "images/info6.jpg";
+    }, 2000); 
+
     let pop = document.querySelector(".pop");
     pop.innerHTML = "<p>Mahishasura Mardini Stotram</p>";
     document.querySelector(".pop").classList.toggle("hide");
@@ -81,20 +99,26 @@ function func3() {
         document.querySelector("#web").src = "";
     }, 36000);
 
-
-    document.querySelector("#web").src =
-        "assets/About Bharatanatyam.mp4";
-        
-        document.querySelector("#web").style.borderRadius = "5px";
+    document.querySelector("#web").src = "assets/About Bharatanatyam.mp4";
+    document.querySelector("#web").style.borderRadius = "5px";
 }
 
 function func4() {
+   
+    document.body.style.backgroundImage = "url('images/vishnu.jpg')";
+    document.body.style.backgroundPosition="center";
+    document.body.style.color = "white";
+    document.querySelector("#vid").style = "border: 10px solid white";
+
+    }
+
+function func5() {
     document.querySelector("#web").src =
     "https://en.wikipedia.org/wiki/Bharatanatyam";
     document.querySelector("body").style = "background-image: linear-gradient(orange, white, green);";
     // document.querySelector("body").style = "background-image: url('images/cover.jpg');"
     document.querySelector("#web").style.borderRadius = "2px";
+    document.querySelector("#vid").style = "border: 10px solid orange";
+    document.querySelector("button").style = "border: 2px solid orange";
 
     }
-
-
