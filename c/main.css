@@ -9,6 +9,9 @@ body {
   background: rgb(247, 231, 222);
   background-image: url(../images/durga.jpg) ;
   background-repeat: no-repeat;
+/* background-size:contain; */
+background-size:cover;
+background-position:center;
   color: #fff;
   
 }
