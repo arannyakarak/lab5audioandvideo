@@ -30,8 +30,8 @@ h1 {
 
 #vid {
 	width:100%;
-	height:300px;
-  object-fit: cover;
+	height:250px;
+  object-fit: fill;
 
 }
 
@@ -50,7 +50,7 @@ img{
 }
 #web {
 	width:100%;
-	height:600px;
+	height:630px;
   object-position: center;
   object-fit: cover;
 }
@@ -109,7 +109,12 @@ iframe {
   opacity:0;
   transition: all 3s;
 }
-
+button{
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  /* border: 1px solid orangered; */
+}
 
 @media screen and (max-width:600px) {
   #container {
