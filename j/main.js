@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         { seconds: 11, callback: func2 },
         { seconds: 21, callback: func3 },
         { seconds: 27, callback: func4 },
-        { seconds: 34, callback: func5 }
+        { seconds: 36, callback: func5 }
     ];
 
     //this activates the cuepoints module.
@@ -67,7 +67,6 @@ normalSpeed.addEventListener('click', (e) => {
 //feel free to rename the functions to be more descriptive of what they do.
 function func1() {
     document.querySelector("#web").src = "images/flag.jpg";
-    
 }
 
 function func2() {
@@ -119,6 +118,10 @@ function func5() {
     // document.querySelector("body").style = "background-image: url('images/cover.jpg');"
     document.querySelector("#web").style.borderRadius = "2px";
     document.querySelector("#vid").style = "border: 10px solid orange";
-    document.querySelector("button").style = "border: 2px solid orange";
+    // document.querySelector(".button").style = "border: 2px solid orange";
+    myplay.style = "border: 2px solid orange";
+    mypause.style = "border: 2px solid orange";
+    slo.style = "border: 2px solid orange";
+    normalSpeed.style = "border: 2px solid orange";
 
     }
