@@ -118,7 +118,7 @@ function func5() {
     // document.querySelector("body").style = "background-image: url('images/cover.jpg');"
     document.querySelector("#web").style.borderRadius = "2px";
     document.querySelector("#vid").style = "border: 10px solid orange";
-    // document.querySelector(".button").style = "border: 2px solid orange";
+    // document.querySelector(".btn").style = "border: 2px solid orange";
     myplay.style = "border: 2px solid orange";
     mypause.style = "border: 2px solid orange";
     slo.style = "border: 2px solid orange";
